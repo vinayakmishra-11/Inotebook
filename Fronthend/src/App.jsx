@@ -9,11 +9,12 @@ import {
   Link
 } from "react-router-dom";
 // import './App.css'
-
+import NoteState from './context/notes/NoteState';
 function App() {
 
   return (
     <>
+    <NoteState>
    <Router>
      <Navbar/>
         <Routes>
@@ -21,6 +22,7 @@ function App() {
           <Route path="/about" element={<About />} />
         </Routes>
    </Router>
+   </NoteState>
     </>
   )
 }
