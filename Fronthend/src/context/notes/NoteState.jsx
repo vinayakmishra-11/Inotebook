@@ -8,7 +8,7 @@ const NoteState = (props) => {
     }
     const [state, setState] = useState(s1);
     const update = () => {
-        setTimeout(() => {
+        setTimeout(() => { // just temperarory 
             setState({
                 "name": "Larry",
                 "class": "6b"
