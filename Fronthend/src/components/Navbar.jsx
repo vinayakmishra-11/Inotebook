@@ -1,4 +1,5 @@
 import React from 'react'
+import { useLocation } from 'react-router'
 import {
   BrowserRouter as Router,
   Routes,
@@ -6,6 +7,13 @@ import {
   Link
 } from "react-router-dom";
 export default function Navbar() {
+  let location = useLocation()
+
+  React.useEffect(() => {
+    // Google Analytics
+    //ga('send', 'pageview')
+    console.log(location.pathname)
+  }, [location]);
   return (
     <>
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -17,10 +25,10 @@ export default function Navbar() {
     <div className="collapse navbar-collapse" id="navbarScroll">
       <ul className="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style={{"--bs-scroll-height": "100px"}}>
         <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" to="/">Home</Link>
+          <Link className={`nav-link ${location.pathname==="/Home" ? "active" : ""}`} to="/">Home</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/about">About</Link>
+          <Link className={`nav-link ${location.pathname==="/about" ? "active" : ""}`} to="/about">About</Link>
         </li>
         <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
