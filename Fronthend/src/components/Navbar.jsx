@@ -16,7 +16,7 @@ export default function Navbar() {
   }, [location]);
   return (
     <>
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className="navbar navbar-expand-lg  navbar-dark bg-dark">
   <div className="container-fluid">
     <Link className="navbar-brand" to="/">iNoteBook</Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,7 +25,7 @@ export default function Navbar() {
     <div className="collapse navbar-collapse" id="navbarScroll">
       <ul className="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style={{"--bs-scroll-height": "100px"}}>
         <li className="nav-item">
-          <Link className={`nav-link ${location.pathname==="/Home" ? "active" : ""}`} to="/">Home</Link>
+          <Link className={`nav-link ${location.pathname==="/" ? "active" : ""}`} to="/">Home</Link>
         </li>
         <li className="nav-item">
           <Link className={`nav-link ${location.pathname==="/about" ? "active" : ""}`} to="/about">About</Link>
