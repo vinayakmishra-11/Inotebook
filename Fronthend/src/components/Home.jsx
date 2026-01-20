@@ -4,7 +4,8 @@ export default function Home() {
   return (
     <div >
      <h1>Add Your Note </h1>
-     <form>
+    <div className="container my-3">
+       <form>
   <div className="mb-3">
     <label for="exampleInputEmail1" className="form-label">Email address</label>
     <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
@@ -20,6 +21,7 @@ export default function Home() {
   </div>
   <button type="submit" className="btn btn-primary">Submit</button>
 </form>
+    </div>
      <h1>Your Notes </h1>
     </div>
   )
