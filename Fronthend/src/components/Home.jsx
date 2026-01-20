@@ -3,7 +3,9 @@ import React from 'react'
 export default function Home() {
   return (
     <div >
-     <h1>Add Your Note </h1>
+     <div className="container">
+      <h2>Add Your Note </h2>
+     </div>
     <div className="container my-3">
        <form>
   <div className="mb-3">
@@ -22,7 +24,9 @@ export default function Home() {
   <button type="submit" className="btn btn-primary">Submit</button>
 </form>
     </div>
-     <h1>Your Notes </h1>
+     <div className="container">
+      <h1>Your Notes </h1>
+     </div>
     </div>
   )
 }
