@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 // import './App.css'
 import NoteState from './context/notes/NoteState';
+import Alert from './components/Alert';
 function App() {
 
   return (
@@ -17,6 +18,7 @@ function App() {
     <NoteState>
    <Router>
      <Navbar/>
+     <Alert message = "This is amazig"/>
      <div className="container">
         <Routes>
           <Route path="/" element={<Home />} />

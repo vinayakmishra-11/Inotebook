@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../Styling/Noteitem.css"
 const Noteitem = (props) => {
   const { note } = props;
   return (
@@ -8,13 +8,13 @@ const Noteitem = (props) => {
         <div className="card-body">
           <h5 className="card-title">{note.title}</h5>
           <p className="card-text">
-            {note.description} Lorem ipsum dolor sit amet consectetur,
-            adipisicing elit. Autem, cupiditate harum. Voluptatem eius
-            consectetur excepturi iure quos reiciendis debitis, odit neque alias
-            quod harum voluptatibus quam vel, eos voluptate saepe?
+            {note.description} 
           </p>
+          <i className="fa-solid fa-trash"></i> <i className="fa-regular fa-pen-to-square"></i>
         </div>
+        
       </div>
+      
     </div>
   );
 };
