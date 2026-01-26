@@ -8,6 +8,7 @@ export default function Notes() {
     const {notes,fetchNotes,addNote, DeleteNote, EditNote} = context;
     useEffect(()=>{
       fetchNotes();
+      // eslint-disable-next-line
     },[]);
   return (
    <>
