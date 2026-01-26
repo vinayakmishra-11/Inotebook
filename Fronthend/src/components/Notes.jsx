@@ -2,10 +2,13 @@ import React from 'react'
 import Context from "../context/notes/noteContext"
 import Noteitem from './Noteitem';
 import AddNote from './AddNote';
-import { useContext } from 'react';
+import { useContext,useEffect } from 'react';
 export default function Notes() {
     const context = useContext(Context);
-    const {notes,addNote, DeleteNote, EditNote} = context;
+    const {notes,fetchNotes,addNote, DeleteNote, EditNote} = context;
+    useEffect(()=>{
+      fetchNotes();
+    },[]);
   return (
    <>
    <AddNote/>
