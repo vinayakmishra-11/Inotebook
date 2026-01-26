@@ -12,11 +12,13 @@ const NoteState = (props) => {
       method : "GET",
       headers :{
         "Content-Type" : "application/json",
-        "auth-token" : "YOUR_AUTH_TOKEN_HERE",
+        "auth-token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjk1YTI0NjVlZGQ1ZjIzYTRlMjEwM2E3In0sImlhdCI6MTc2NzU1NjYwOX0.713Pkcv3NHyWFEjYYTJ55Hf16Vxrs-HNy9H6JWxXFwM",
       }
     });
     const json = await response.json();
+    if (Array.isArray(json)) {
     setNotes(json);
+  }
   }
   // Add A note
   const addNote = async (title, description, tag) => {
