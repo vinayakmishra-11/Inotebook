@@ -69,15 +69,16 @@ const NoteState = (props) => {
       },
       body: JSON.stringify({title,description,tag}),
     });
-    const json = response.json();
-    for (let index = 0; index < notes.length; index++) {
-      const element = notes[index];
-      if (element._id === id) {
-        element.title = title;
-        element.description = description;
-        element.tag = tag;
+    const json = await response.json();
+    
+    // Create a new array with updated note
+    const newNotes = notes.map((note) => {
+      if (note._id === id) {
+        return { ...note, title, description, tag };
       }
-    }
+      return note;
+    });
+    setNotes(newNotes);
   };
   return (
     <NoteContext.Provider value={{ notes, fetchNotes,addNote, DeleteNote, EditNote }}>
