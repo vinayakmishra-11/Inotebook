@@ -16,10 +16,7 @@ export default function Notes() {
   });
   const handleclick = (e) => {
     console.log("updating the note ",note)
-    e.preventDefault();
-    // addNote(note.title, note.description, note.tag);
     EditNote(note.id,note.title,note.description,note.tag);
-    refClose.current.click();
   };
   const onChange = (e) => {
     setNote({ ...note, [e.target.name]: e.target.value });
@@ -123,7 +120,7 @@ export default function Notes() {
               >
                 Close
               </button>
-              <button onClick={handleclick} type="button" className="btn btn-primary">
+              <button onClick={handleclick} type="button" className="btn btn-primary" data-bs-dismiss="modal">
                 Update Notes{" "}
               </button>
             </div>
