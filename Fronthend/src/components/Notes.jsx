@@ -18,6 +18,7 @@ export default function Notes() {
     console.log("updating the note ",note)
     e.preventDefault();
     // addNote(note.title, note.description, note.tag);
+    EditNote(note.id,note.title,note.description,note.tag);
     refClose.current.click();
   };
   const onChange = (e) => {
